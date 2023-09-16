@@ -34,7 +34,11 @@ enum ImgIMGConstant {
   appLoginUserNotImg('notuser'),
   appLoginErrPassImg('icons8-password-96'),
   appLoginTooManyRequestImg('icons8-banned-120'),
-  appLoginEmailNotVerified('icons8-verified-96');
+  appLoginEmailNotVerified('icons8-verified-96'),
+
+  appHomeAccountImg('icons8-account-64'),
+
+  appHomeNoteImg('noteimg');
 
   final String value;
   const ImgIMGConstant(this.value);
@@ -53,4 +57,10 @@ enum ImgIMGConstant {
 
   String get toPng5 => "assets/icon/log_reg_pas_ico/login_icon/$value.png";
   Image get toImg5 => Image.asset(toPng5);
+
+  String get toPng6 => "assets/icon/home_icon/$value.png";
+  Image get toImg6 => Image.asset(toPng6);
+
+  String get toPng7 => "assets/images/app_home/$value.jpg";
+  Image get toImg7 => Image.asset(toPng7);
 }

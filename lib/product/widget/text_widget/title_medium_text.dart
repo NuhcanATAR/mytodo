@@ -24,6 +24,27 @@ class TitleMediumBlackBoldText extends StatelessWidget {
   }
 }
 
+class TitleMediumBlackGreyBoldText extends StatelessWidget {
+  const TitleMediumBlackGreyBoldText(
+      {required this.textAlign, required this.text, super.key});
+
+  final String text;
+  final dynamic textAlign;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: GoogleFonts.nunito(
+        textStyle: context.general.textTheme.titleMedium?.copyWith(
+          color: ColorTextConstant.blackGrey,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
 class TitleMediumWhiteText extends StatelessWidget {
   const TitleMediumWhiteText(
       {required this.textAlign, required this.text, super.key});
