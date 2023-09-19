@@ -8,7 +8,6 @@ import 'feature/splash/splash.dart';
 // pub dev
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 // model & database
 import 'package:mytodo/product/initialize/app_start.dart';
 import 'package:mytodo/product/utility/firebase/database/splash_db/splash.dart';

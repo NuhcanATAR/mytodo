@@ -125,3 +125,21 @@ class StringForgotPasswordConstant {
   static const String emailFalse =
       "Email Adresi Bulunamadı, email adresinizi kontrol ediniz.";
 }
+
+@immutable
+class StringTodoConstants {
+  const StringTodoConstants._();
+
+  static const String meetingCreateTitle = "Toplantı Oluşturun!";
+  static String meetingCreateSubTitle =
+      "Toplantı bilgilerinizi girerek planınızı kaydedin.";
+  static const String goingPlaceTitle = "Seyahat Planınızı Oluşturun";
+  static const String goingPlaceSubTitle =
+      "Seyahat planınızı oluşturabilirsiniz.";
+  static const String dateGoingStartDate = "Gidiş Tarihi";
+  static const String dateGoingEndDate = "Geliş Tarihi";
+  static const String cityStartLocationText = "Başlangıç Konumu *";
+  static const String cityEndLocationText = "Gidilecek Konum *";
+  static const String datePickerText = "Tarih Belirtin";
+  static const String button = "Kaydet";
+}

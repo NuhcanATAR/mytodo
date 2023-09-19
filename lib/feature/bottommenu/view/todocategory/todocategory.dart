@@ -4,6 +4,8 @@ import 'package:kartal/kartal.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/todocreate.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
 
+import '../../../../product/utility/base/todo_base/todo_base.dart';
+
 class TodoCategoryView extends StatefulWidget {
   const TodoCategoryView({super.key, required this.data});
   final Map<String, dynamic> data;
@@ -12,7 +14,7 @@ class TodoCategoryView extends StatefulWidget {
   State<TodoCategoryView> createState() => _TodoCategoryViewState();
 }
 
-class _TodoCategoryViewState extends State<TodoCategoryView> {
+class _TodoCategoryViewState extends MainTodoBase<TodoCategoryView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

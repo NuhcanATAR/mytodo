@@ -6,4 +6,6 @@ class FirebaseService {
   final auth = FirebaseAuth.instance;
   final cloudFire = FirebaseFirestore.instance;
   final storage = FirebaseStorage.instance;
+
+  final userID = FirebaseAuth.instance.currentUser!.uid;
 }
