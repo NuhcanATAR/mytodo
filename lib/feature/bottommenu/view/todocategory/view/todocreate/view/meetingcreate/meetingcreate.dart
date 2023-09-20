@@ -122,7 +122,6 @@ class _MeetingCreateViewState extends MainTodoBase<MeetingCreateView> {
             ),
           ),
           controller: serviceModel.explanationController,
-          validator: serviceModel.explanationValidator,
           onTap: () {
             setState(() {
               serviceModel.inputBorder = true;

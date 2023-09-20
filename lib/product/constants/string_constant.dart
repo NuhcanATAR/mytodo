@@ -141,5 +141,35 @@ class StringTodoConstants {
   static const String cityStartLocationText = "Başlangıç Konumu *";
   static const String cityEndLocationText = "Gidilecek Konum *";
   static const String datePickerText = "Tarih Belirtin";
+  static const String studyCreaeStartDate = "Başlangıç Tarihi";
+  static const String studyCreaeEndDate = "Bitiş Tarihi";
+  static const String studyCreateTitleText = "Ders Çalışma Planı Oluştur";
+  static const String studyCreateSubTitleText =
+      "Ders çalışma planınızı oluşturun ve planlı şekilde çalışmaya başlayın.";
+  static const String bookCreateTitle = "Kitaplarınızı ekleyin";
+  static const String bookCreateSubTitle =
+      "Kitaplarınızı ekleyin ve kendinizi geliştirin daha çok kitap ekleyerek kendinizi geliştirin.";
+  static const String pageCountText = "Sayfa Sayısı *";
+  static const String bookCategoryText = "Kitap Kategorisi *";
+  static const String shoppingCreateTitle = "Alışveriş Listenizi oluşturun.";
+  static const String shoppingCreateSubTitle =
+      "Alışveriş listenizi oluşturarak, daha kolay ve hızlı alışverişinizi yapın.";
+  static const String shoppingTypeText = "Alışveriş Türü *";
+  static const String healthCreateTitle = "Sağlık Planınızı oluşturun.";
+  static const String healthCreateSubTitle =
+      "Sağlık planınızı oluşturarak, sağlınızı planlayın.";
+  static const String healthCreateDate = "Gidiş Tarihi *";
+  static const String healtType = "Kategori Seçimi *";
+
+  static const String sportTitle = "Spor Planlanlarınızı oluşturun!";
+  static const String sportSubTitle =
+      "Spor planlarınızı oluşturun ve düzenli spor yapmaya başlayın.";
+  static const String sporDate = "Başlama Tarihi *";
+  static const String sporTimeType = "Spor Vakti *";
+
+  static const String movieTitle = "Dizi & Film oluştur!";
+  static const String movieSubTitle =
+      "İzlemek istediğiniz veya izlediğiniz dizi veya filmleri not alabilirsiniz.";
+  static const String movieCategory = "Kategorisi *";
   static const String button = "Kaydet";
 }

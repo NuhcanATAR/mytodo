@@ -123,7 +123,6 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
             ),
           ),
           controller: serviceModel.explanationController,
-          validator: serviceModel.explanationValidator,
           onTap: () {
             setState(() {
               serviceModel.inputBorder = true;
@@ -345,7 +344,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
           ],
         ),
       );
-  // city end select
+
   // button
   Widget get // button
       buildButtonWidget => Padding(

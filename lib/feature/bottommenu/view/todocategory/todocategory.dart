@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/todocreate.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
+import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
 import '../../../../product/utility/base/todo_base/todo_base.dart';
 
@@ -63,6 +66,70 @@ class _TodoCategoryViewState extends MainTodoBase<TodoCategoryView> {
             ),
           ),
         ],
+      ),
+      body: Padding(
+        padding: context.padding.normal,
+        child: StreamBuilder<QuerySnapshot>(
+          stream: widget.data['ID'] == "0qXiPbGgtwu3j1r5j5Lz"
+              ? TodoServiceDb.TODOS.stTodoMeetingCol
+              : widget.data['ID'] == "GMwLSlyI6e2fY1N8JsLQ"
+                  ? TodoServiceDb.TODOS.stTodoPlacesToGoCol
+                  : widget.data['ID'] == "QqqKN0VbdWfofliUtDm6"
+                      ? TodoServiceDb.TODOS.stTodoStudyCol
+                      : widget.data['ID'] == "RjFvWQe3dpW34QAxX2v7"
+                          ? TodoServiceDb.TODOS.stTodoBooksCol
+                          : widget.data['ID'] == "SXrN07acJwhryUdzVwIQ"
+                              ? TodoServiceDb.TODOS.stTodoShopCol
+                              : widget.data['ID'] == "ZaqqOF15uH11kMv0vdHu"
+                                  ? TodoServiceDb.TODOS.stTodoHealthCol
+                                  : widget.data['ID'] == "fYGlLPTeMpPCYfirfleu"
+                                      ? TodoServiceDb.TODOS.stTodoSportCol
+                                      : widget.data['ID'] ==
+                                              "wNtyPEvvFYoWjI36TSJy"
+                                          ? TodoServiceDb.TODOS.stTodoMovieCol
+                                          : TodoServiceDb.TODOS.stTodoTestCol,
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return const Center(
+                child: TitleMediumBlackBoldText(
+                  text: "Hata oluştu!",
+                  textAlign: TextAlign.center,
+                ),
+              );
+            }
+
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: TitleMediumBlackBoldText(
+                  text: "Lütfen Bekle!",
+                  textAlign: TextAlign.center,
+                ),
+              );
+            }
+
+            if (snapshot.hasData &&
+                snapshot.data != null &&
+                snapshot.data!.docs.isNotEmpty) {
+              return ListView(
+                children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> dataTodo =
+                      document.data()! as Map<String, dynamic>;
+                  return ListTile(
+                    title: Text(dataTodo['TITLE'].toString()),
+                  );
+                }).toList(),
+              );
+            } else {
+              return const Center(
+                child: TitleMediumBlackBoldText(
+                  text: "Henüz todo yok",
+                  textAlign: TextAlign.center,
+                ),
+              );
+            }
+          },
+        ),
       ),
     );
   }

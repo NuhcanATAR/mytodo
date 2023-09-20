@@ -7,5 +7,5 @@ class FirebaseService {
   final cloudFire = FirebaseFirestore.instance;
   final storage = FirebaseStorage.instance;
 
-  final userID = FirebaseAuth.instance.currentUser!.uid;
+  final userID = FirebaseAuth.instance.currentUser?.uid;
 }
