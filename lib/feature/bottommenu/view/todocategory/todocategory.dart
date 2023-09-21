@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/todocreate.dart';
+import 'package:mytodo/feature/bottommenu/view/todocategory/widget/notodo_view.dart';
+import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todocard_widget.dart';
+import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todoerror_view.dart';
+import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todoloading_view.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
@@ -91,21 +95,11 @@ class _TodoCategoryViewState extends MainTodoBase<TodoCategoryView> {
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
-              return const Center(
-                child: TitleMediumBlackBoldText(
-                  text: "Hata oluştu!",
-                  textAlign: TextAlign.center,
-                ),
-              );
+              return const TodoErrorView();
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: TitleMediumBlackBoldText(
-                  text: "Lütfen Bekle!",
-                  textAlign: TextAlign.center,
-                ),
-              );
+              return const TodoLoadingView();
             }
 
             if (snapshot.hasData &&
@@ -115,18 +109,14 @@ class _TodoCategoryViewState extends MainTodoBase<TodoCategoryView> {
                 children: snapshot.data!.docs.map((DocumentSnapshot document) {
                   Map<String, dynamic> dataTodo =
                       document.data()! as Map<String, dynamic>;
-                  return ListTile(
-                    title: Text(dataTodo['TITLE'].toString()),
+                  return TodoCard(
+                    data: dataTodo,
+                    mainData: widget.data,
                   );
                 }).toList(),
               );
             } else {
-              return const Center(
-                child: TitleMediumBlackBoldText(
-                  text: "Henüz todo yok",
-                  textAlign: TextAlign.center,
-                ),
-              );
+              return const NoTodoView();
             }
           },
         ),

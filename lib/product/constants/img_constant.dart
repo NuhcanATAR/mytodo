@@ -38,7 +38,9 @@ enum ImgIMGConstant {
 
   appHomeAccountImg('icons8-account-64'),
 
-  appHomeNoteImg('noteimg');
+  appHomeNoteImg('noteimg'),
+
+  appTodoViewImg('undraw_void_3ggu');
 
   final String value;
   const ImgIMGConstant(this.value);
@@ -63,4 +65,7 @@ enum ImgIMGConstant {
 
   String get toPng7 => "assets/images/app_home/$value.jpg";
   Image get toImg7 => Image.asset(toPng7);
+
+  String get toPng8 => "assets/images/app_todo/$value.png";
+  Image get toImg8 => Image.asset(toPng8);
 }

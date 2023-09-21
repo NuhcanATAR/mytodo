@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/todocategory.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/utility/firebase/database/home_db/homedb.dart';
+import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -18,10 +19,50 @@ class CategoryListWidget extends StatelessWidget {
   final dynamic dynamicHeight;
   @override
   Widget build(BuildContext context) {
-    return buildListWidget(context);
+    Future<int> getDocumentCount(Map<String, dynamic> data) async {
+      if (data['ID'] == "0qXiPbGgtwu3j1r5j5Lz") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refMeetingCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "GMwLSlyI6e2fY1N8JsLQ") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refGoingPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "QqqKN0VbdWfofliUtDm6") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refStudyPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "RjFvWQe3dpW34QAxX2v7") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refBooksPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "SXrN07acJwhryUdzVwIQ") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refShoppingPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "ZaqqOF15uH11kMv0vdHu") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refHealtPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "fYGlLPTeMpPCYfirfleu") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refSporPlaceCol.get();
+        return querySnapshot.size;
+      } else if (data['ID'] == "wNtyPEvvFYoWjI36TSJy") {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refMoviePlaceCol.get();
+        return querySnapshot.size;
+      } else {
+        QuerySnapshot querySnapshot =
+            await TodoServiceDb.TODOS.refMoviePlaceCol.get();
+        return querySnapshot.size;
+      }
+    }
+
+    return buildListWidget(context, getDocumentCount);
   }
 
-  Widget buildListWidget(BuildContext context) => Padding(
+  Widget buildListWidget(BuildContext context, getDocumentCount) => Padding(
         padding: const EdgeInsets.only(top: 15),
         child: SizedBox(
           width: maxWidth,
@@ -43,6 +84,7 @@ class CategoryListWidget extends StatelessWidget {
                 children: snapshot.data!.docs.map((DocumentSnapshot document) {
                   Map<String, dynamic> data =
                       document.data()! as Map<String, dynamic>;
+
                   return GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -130,17 +172,34 @@ class CategoryListWidget extends StatelessWidget {
                                 ),
                               ),
                               // footer
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: LinearPercentIndicator(
-                                  width: dynamicWidth(0.45),
-                                  lineHeight: 14.0,
-                                  percent: 0.4,
-                                  backgroundColor: Colors.grey,
-                                  animation: true,
-                                  progressColor:
-                                      ColorBackgroundConstant.purplePrimary,
-                                ),
+                              FutureBuilder<int>(
+                                future: getDocumentCount(data),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasError) {
+                                    return const SizedBox();
+                                  }
+
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.done) {
+                                    double documentCountPercentage =
+                                        (snapshot.data ?? 0) / 100.0;
+
+                                    return Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: LinearPercentIndicator(
+                                        width: dynamicWidth(0.45),
+                                        lineHeight: 14.0,
+                                        percent: documentCountPercentage,
+                                        backgroundColor: Colors.grey,
+                                        animation: true,
+                                        progressColor: ColorBackgroundConstant
+                                            .purplePrimary,
+                                      ),
+                                    );
+                                  } else {
+                                    return const SizedBox();
+                                  }
+                                },
                               ),
                             ],
                           ),

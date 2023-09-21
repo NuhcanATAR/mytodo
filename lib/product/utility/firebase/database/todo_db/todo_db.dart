@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 enum TodoServiceDb {
-  TODOS;
+  TODOS,
+  FAVORITE,
+  IMPORTANT;
 
   // collection ref
   CollectionReference<Map<String, dynamic>> get refMeetingCol =>
@@ -114,4 +116,12 @@ enum TodoServiceDb {
       .doc(FirebaseAuth.instance.currentUser?.uid)
       .collection("TEST")
       .snapshots();
+
+  // favorite table
+  CollectionReference get refFavoCol =>
+      FirebaseFirestore.instance.collection(name);
+
+  // important table
+  CollectionReference get refImportantCol =>
+      FirebaseFirestore.instance.collection(name);
 }

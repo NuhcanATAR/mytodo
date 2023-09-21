@@ -93,12 +93,14 @@ flutter:
     - assets/images/app_start_img/
     - assets/images/app_slider/
     - assets/images/app_home/
+    - assets/images/app_todo/
     - assets/logo/
     - assets/icon/
     - assets/icon/log_reg_pas_ico/register_icon/
     - assets/icon/log_reg_pas_ico/password_icon/
     - assets/icon/log_reg_pas_ico/login_icon/
     - assets/icon/home_icon/
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

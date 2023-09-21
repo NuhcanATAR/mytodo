@@ -105,6 +105,13 @@ class TodoModelService {
   late String movieCategorySelect = moviCategory.first;
 
   // count
-
   late int bookPageCount = 1;
+
+  // check status
+  bool isTodoCheckStatus(Map<String, dynamic> data) => data['STATUS'];
+
+  // favorite button status
+  late bool isFavoriteButtonStatus = false;
+  // important buttons status
+  late bool isImportantButtonStatus = false;
 }

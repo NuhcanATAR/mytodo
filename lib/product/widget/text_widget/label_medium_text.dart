@@ -84,3 +84,43 @@ class LabelMediumBlackBoldText extends StatelessWidget {
     );
   }
 }
+
+class LabelMediumMainColorText extends StatelessWidget {
+  const LabelMediumMainColorText(
+      {required this.textAlign, required this.text, super.key});
+
+  final String text;
+  final dynamic textAlign;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: GoogleFonts.nunito(
+        textStyle: context.general.textTheme.labelMedium?.copyWith(
+          color: ColorTextConstant.mainColor,
+        ),
+      ),
+    );
+  }
+}
+
+class LabelMediumRedColorText extends StatelessWidget {
+  const LabelMediumRedColorText(
+      {required this.textAlign, required this.text, super.key});
+
+  final String text;
+  final dynamic textAlign;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: GoogleFonts.nunito(
+        textStyle: context.general.textTheme.labelMedium?.copyWith(
+          color: Colors.red,
+        ),
+      ),
+    );
+  }
+}

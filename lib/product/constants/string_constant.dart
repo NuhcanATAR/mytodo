@@ -172,4 +172,53 @@ class StringTodoConstants {
       "İzlemek istediğiniz veya izlediğiniz dizi veya filmleri not alabilirsiniz.";
   static const String movieCategory = "Kategorisi *";
   static const String button = "Kaydet";
+
+  static const String meetingUpdateTitle = "Toplantı Bilgini Güncelle!";
+  static const String meetingUpdateSubTitle =
+      "Toplantı bilginizi güncelleyebilirsiniz.";
+
+  static const String goingToPlaceUpdateTitle =
+      "Seyahat Planınızı Güncelleyin!";
+  static const String goingToPlaceUpdateSubTitle =
+      "Seyahat planınızmı güncellemek istiyorsunuz? hemen güncelleyin.";
+
+  static const String studyUpdateTitle = "Ders Çalışma planı güncelleme!";
+  static const String studyUpdateSubTitle = "Çalışma planınızı güncelleyin.";
+
+  static const String bookUpdateTitle = "Kitap Listenizi Güncelleyin!";
+  static const String bookUpdateSubTitle = "Rafınızda duran kitabı değiştirin.";
+
+  static const String shoppingListUpdateTitle = "Alışveriş Listeni Güncelle!";
+  static const String shoppingListUpdateSubTitle =
+      "Alışveriş listenizi güncelleyin.";
+
+  static const String healthUpdateTitle = "Sağlık planınızı güncelleyin!";
+  static const String healthUpdateSubTitle =
+      "Sağlık planınızı güncelleyebilirsiniz.";
+
+  static const String sporUpdateTitle = "Spor Planlarınızı güncelleyin!";
+  static const String sporUpdateSubTitle =
+      "Spor planlarınızı hemen güncelleyin.";
+
+  static const String movieUpdateTitle = "Dizi & Film Listeni Güncelle!";
+  static const String movieUpdateSubTitle =
+      "İzleme listeni güncelleyebilirsin.";
+
+  static const String updateBtnText = "Güncelle!";
+
+  // no todo title
+  static const String noTodoTitle = "Henüz Toplantı Oluşturmadınız!";
+
+  // no todo sub title
+  static const String noTodoSubTitle =
+      "Toplantı todosu oluşturmadınız isterseniz Toplantı todosu oluşturabilirsiniz.";
+
+  // error todo title
+  static const String errorTodoTitle = "Todolar Yüklenemedi!";
+  // erro todo sub title
+  static const String errorTodoSubTitle =
+      "Todolar yüklenirken hata oluştu daha sonra tekrar deneyiniz.";
+
+  // loading title
+  static const String loadingTitle = "Todolar Yükleniyor...";
 }
