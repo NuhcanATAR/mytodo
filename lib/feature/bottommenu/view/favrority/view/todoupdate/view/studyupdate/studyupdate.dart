@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
-import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/view/goingplacecreate/widget/titlesubtitle_widget.dart';
+import 'package:mytodo/feature/bottommenu/view/todocategory/view/todoupdate/view/studyupdate/widget/titlesubtitle_widget.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/constants/string_constant.dart';
+import 'package:mytodo/product/utility/base/favority_base/favority_base.dart';
 import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
-class GoingPlaceCreateView extends StatefulWidget {
-  const GoingPlaceCreateView({super.key, required this.data});
+class StudyUpdateView extends StatefulWidget {
+  const StudyUpdateView(
+      {super.key, required this.data, required this.mainData});
   final Map<String, dynamic> data;
-
+  final Map<String, dynamic> mainData;
   @override
-  State<GoingPlaceCreateView> createState() => _GoingPlaceCreateViewState();
+  State<StudyUpdateView> createState() => _StudyUpdateViewState();
 }
 
-class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
+class _StudyUpdateViewState extends MainFavorityBase<StudyUpdateView> {
+  late TextEditingController title = TextEditingController(
+    text: widget.mainData['TITLE'],
+  );
+
+  late TextEditingController explanation = TextEditingController(
+    text: widget.mainData['EXPLANATION'],
+  );
+
+  late DateTime startDate = DateTime(widget.mainData['STARTYEAR'],
+      widget.mainData['STARTMONTH'], widget.mainData['STARTDAY']);
+
+  late DateTime finishDate = DateTime(widget.mainData['ENDYEAR'],
+      widget.mainData['ENDMONTH'], widget.mainData['ENDDAY']);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +49,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
           ),
         ),
         title: Text(
-          "Gidilecek Yer Oluştur",
+          "Ders Çalışma Planı Güncelle",
           style: GoogleFonts.nunito(
             textStyle: context.general.textTheme.bodyMedium?.copyWith(
               color: ColorBackgroundConstant.purplePrimary,
@@ -43,7 +58,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
         ),
       ),
       body: Form(
-        key: serviceModel.formGoingPlaceAddKey,
+        key: serviceModel.formStudyAddKey,
         child: Padding(
           padding: context.padding.normal,
           child: ListView(
@@ -54,10 +69,8 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
               buildTitleinputWidget,
               // explanation input
               buildExplanationWidget,
-              // going place start/end date
-              buildMeetingDateWidget,
-              // city start/finish location select widget
-              buildCityStartSelectWidget,
+              // study start/end date
+              buildStudyDateWidget,
               // button
               buildButtonWidget,
             ],
@@ -80,7 +93,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
               color: ColorTextConstant.blackGrey,
             ),
           ),
-          controller: serviceModel.titleController,
+          controller: title,
           validator: serviceModel.titleValidator,
           onTap: () {
             setState(() {
@@ -122,7 +135,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
               color: ColorTextConstant.blackGrey,
             ),
           ),
-          controller: serviceModel.explanationController,
+          controller: explanation,
           onTap: () {
             setState(() {
               serviceModel.inputBorder = true;
@@ -151,8 +164,8 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
         ),
       );
 
-  // going place date
-  Widget get buildMeetingDateWidget => Row(
+  // study start/end date
+  Widget get buildStudyDateWidget => Row(
         children: <Widget>[
           // start date
           Flexible(
@@ -166,13 +179,39 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
                     padding: EdgeInsets.only(bottom: 15),
                     child: LabelMediumGreyBoldText(
                       textAlign: TextAlign.left,
-                      text: StringTodoConstants.dateGoingStartDate,
+                      text: StringTodoConstants.studyCreaeStartDate,
                     ),
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    ShowDateStartPickerDialog();
+                  onTap: () async {
+                    final DateTime? dateTime = await showDatePicker(
+                      context: context,
+                      initialDate: startDate,
+                      firstDate: DateTime(2023),
+                      lastDate: DateTime(2025),
+                      helpText: "Başlangıç Tarihi",
+                      confirmText: "Tamam",
+                      cancelText: "Kapat",
+                      builder: (BuildContext context, Widget? child) {
+                        return Theme(
+                          data: ThemeData.light().copyWith(
+                            colorScheme: ColorScheme.light(
+                              primary: ColorBackgroundConstant.purplePrimary,
+                              onPrimary: Colors.white,
+                              surface: Colors.white,
+                              onSurface: Colors.black,
+                            ),
+                          ),
+                          child: child!,
+                        );
+                      },
+                    );
+                    if (dateTime != null) {
+                      setState(() {
+                        startDate = dateTime;
+                      });
+                    }
                   },
                   child: Row(
                     children: <Widget>[
@@ -187,7 +226,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
                       LabelMediumGreyBoldText(
                         textAlign: TextAlign.left,
                         text:
-                            "${serviceModel.selectStartdateTime.day}.${serviceModel.selectStartdateTime.month}.${serviceModel.selectStartdateTime.year}",
+                            "${startDate.day}.${startDate.month}.${startDate.year}",
                       ),
                     ],
                   ),
@@ -207,13 +246,39 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
                     padding: EdgeInsets.only(bottom: 15),
                     child: LabelMediumGreyBoldText(
                       textAlign: TextAlign.left,
-                      text: StringTodoConstants.dateGoingEndDate,
+                      text: StringTodoConstants.studyCreaeEndDate,
                     ),
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    ShowDateEndPickerDialog();
+                  onTap: () async {
+                    final DateTime? dateTime = await showDatePicker(
+                      context: context,
+                      initialDate: finishDate,
+                      firstDate: DateTime(2023),
+                      lastDate: DateTime(2025),
+                      helpText: "Bitiş Tarihi",
+                      confirmText: "Tamam",
+                      cancelText: "Kapat",
+                      builder: (BuildContext context, Widget? child) {
+                        return Theme(
+                          data: ThemeData.light().copyWith(
+                            colorScheme: ColorScheme.light(
+                              primary: ColorBackgroundConstant.purplePrimary,
+                              onPrimary: Colors.white,
+                              surface: Colors.white,
+                              onSurface: Colors.black,
+                            ),
+                          ),
+                          child: child!,
+                        );
+                      },
+                    );
+                    if (dateTime != null) {
+                      setState(() {
+                        finishDate = dateTime;
+                      });
+                    }
                   },
                   child: Row(
                     children: <Widget>[
@@ -228,7 +293,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
                       LabelMediumGreyBoldText(
                         textAlign: TextAlign.left,
                         text:
-                            "${serviceModel.selectEnddateTime.day}.${serviceModel.selectEnddateTime.month}.${serviceModel.selectEnddateTime.year}",
+                            "${finishDate.day}.${finishDate.month}.${finishDate.year}",
                       ),
                     ],
                   ),
@@ -238,112 +303,6 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
           ),
         ],
       );
-  // city start select
-  Widget get buildCityStartSelectWidget => Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          children: <Widget>[
-            // start city select
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 1,
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    width: maxWidth,
-                    child: const Padding(
-                      padding: EdgeInsets.only(bottom: 5),
-                      child: LabelMediumGreyBoldText(
-                        textAlign: TextAlign.left,
-                        text: StringTodoConstants.cityStartLocationText,
-                      ),
-                    ),
-                  ),
-                  DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: serviceModel.cityStartSelect,
-                      icon: const Icon(
-                        Icons.location_on,
-                        color: Colors.black54,
-                        size: 24,
-                      ),
-                      onChanged: (String? value) {
-                        setState(() {
-                          serviceModel.cityStartSelect = value!;
-                        });
-                      },
-                      style: GoogleFonts.nunito(
-                        textStyle:
-                            context.general.textTheme.labelMedium?.copyWith(
-                          color: Colors.black54,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      items: serviceModel.cityList
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            // finish city select
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 1,
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    width: maxWidth,
-                    child: const Padding(
-                      padding: EdgeInsets.only(bottom: 5),
-                      child: LabelMediumGreyBoldText(
-                        textAlign: TextAlign.left,
-                        text: StringTodoConstants.cityStartLocationText,
-                      ),
-                    ),
-                  ),
-                  DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: serviceModel.cityFinishSelect,
-                      icon: const Icon(
-                        Icons.location_on,
-                        color: Colors.black54,
-                        size: 24,
-                      ),
-                      elevation: 16,
-                      onChanged: (String? value) {
-                        setState(() {
-                          serviceModel.cityFinishSelect = value!;
-                        });
-                      },
-                      style: GoogleFonts.nunito(
-                        textStyle:
-                            context.general.textTheme.labelMedium?.copyWith(
-                          color: Colors.black54,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      items: serviceModel.cityList
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
 
   // button
   Widget get // button
@@ -351,9 +310,9 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
             padding: const EdgeInsets.only(top: 20),
             child: GestureDetector(
               onTap: () {
-                if (serviceModel.formGoingPlaceAddKey.currentState!
-                    .validate()) {
-                  goingPlaceAdd(widget.data);
+                if (serviceModel.formStudyAddKey.currentState!.validate()) {
+                  studyUpdate(widget.mainData, title, explanation, startDate,
+                      finishDate);
                 }
               },
               child: SizedBox(
@@ -368,7 +327,7 @@ class _GoingPlaceCreateViewState extends MainTodoBase<GoingPlaceCreateView> {
                   ),
                   alignment: Alignment.center,
                   child: const LabelMediumWhiteText(
-                    text: StringTodoConstants.button,
+                    text: StringTodoConstants.updateBtnText,
                     textAlign: TextAlign.center,
                   ),
                 ),

@@ -2,8 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
-import 'package:mytodo/feature/bottommenu/view/todocategory/view/todoupdate/todoupdate.dart';
+import 'package:mytodo/feature/bottommenu/view/favrority/view/todoupdate/todoupdate.dart';
 import 'package:mytodo/product/constants/color_constant.dart';
+import 'package:mytodo/product/utility/base/favority_base/favority_base.dart';
 import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
@@ -28,7 +29,7 @@ class TodoDetailsView extends StatefulWidget {
   State<TodoDetailsView> createState() => _TodoDetailsViewState();
 }
 
-class _TodoDetailsViewState extends MainTodoBase<TodoDetailsView> {
+class _TodoDetailsViewState extends MainFavorityBase<TodoDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -195,7 +196,7 @@ class _TodoDetailsViewState extends MainTodoBase<TodoDetailsView> {
                 if (snapshot.hasData && !snapshot.data!.exists) {
                   return GestureDetector(
                     onTap: () {
-                      todoImportantAdd(widget.data, widget.mainData);
+                      todoImportantAdd(widget.data);
                       setState(() {
                         serviceModel.isImportantButtonStatus = false;
                       });
@@ -247,7 +248,7 @@ class _TodoDetailsViewState extends MainTodoBase<TodoDetailsView> {
                         )
                       : GestureDetector(
                           onTap: () {
-                            todoImportantAdd(widget.data, widget.mainData);
+                            todoImportantAdd(widget.data);
                             setState(() {
                               serviceModel.isImportantButtonStatus = false;
                             });
@@ -369,7 +370,7 @@ class _TodoDetailsViewState extends MainTodoBase<TodoDetailsView> {
 
   // start location & finish location
   Widget get buildStartFinishLocation =>
-      widget.mainData['ID'] == "GMwLSlyI6e2fY1N8JsLQ"
+      widget.mainData['CATEGORYID'] == "GMwLSlyI6e2fY1N8JsLQ"
           ? Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: SizedBox(

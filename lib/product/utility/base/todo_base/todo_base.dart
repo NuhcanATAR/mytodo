@@ -169,9 +169,10 @@ abstract class MainTodoBase<T extends StatefulWidget> extends State<T> {
   }
 
   // going place add
-  Future<void> goingPlaceAdd() async {
+  Future<void> goingPlaceAdd(Map<String, dynamic> mainData) async {
     return TodoServiceDb.TODOS.refGoingPlaceCol.add({
       "ID": null,
+      "TODOCATEGORY": mainData['ID'],
       "USERID": firebaseService.userID,
       "TITLE": serviceModel.titleController.text,
       "EXPLANATION": serviceModel.explanationController.text,
@@ -571,10 +572,12 @@ abstract class MainTodoBase<T extends StatefulWidget> extends State<T> {
   }
 
   // todo favorite add
-  Future<void> todoFavoriteAdd(Map<String, dynamic> data) async {
+  Future<void> todoFavoriteAdd(
+      Map<String, dynamic> data, Map<String, dynamic> mainData) async {
     return await TodoServiceDb.FAVORITE.refFavoCol.doc(data['ID']).set({
       "USERID": firebaseService.userID,
       "TODOID": data['ID'],
+      "CATEGORYID": mainData['ID'],
       "DATE": FieldValue.serverTimestamp(),
     }).then((value) {
       serviceModel.logger.i("Favorilere Eklendi");
@@ -596,10 +599,12 @@ abstract class MainTodoBase<T extends StatefulWidget> extends State<T> {
   }
 
   // todo important add
-  Future<void> todoImportantAdd(Map<String, dynamic> data) async {
+  Future<void> todoImportantAdd(
+      Map<String, dynamic> data, Map<String, dynamic> mainData) async {
     return await TodoServiceDb.IMPORTANT.refImportantCol.doc(data['ID']).set({
       "USERID": firebaseService.userID,
       "TODOID": data['ID'],
+      "CATEGORYID": mainData['ID'],
       "DATE": FieldValue.serverTimestamp(),
     }).then((value) {
       serviceModel.logger.i("Önemli Listeye Eklendi");

@@ -64,6 +64,7 @@ dependencies:
   animate_do: ^3.1.2
   logger: ^2.0.2
   percent_indicator: ^4.2.3
+  table_calendar: ^3.0.9
 
 dev_dependencies:
   flutter_test:
