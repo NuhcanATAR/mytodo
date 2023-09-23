@@ -31,20 +31,16 @@ class StringSliderConstant {
   static const String sliderDescription3 =
       "Todo oluşturarak zamanınızı yönetebilirsiniz.";
 
-  static const String sliderTitle4 = "Todo Rehberinizi Oluşturun!";
+  static const String sliderTitle4 = "Favori Todolarını Kaydet";
   static const String sliderDescription4 =
-      "Rehberinze kaydetmek istemediğiniz ama önemli olabileceğini düşündüğünüz kişileri todo rehbere kaydedebilirsiniz.";
-
-  static const String sliderTitle5 = "Favori Todolarını Kaydet";
-  static const String sliderDescription5 =
       "Favori Todolarınızı tekrar görüntülemek için kaydedebilirsiniz.";
 
-  static const String sliderTitle6 = "Önemli Todolar!";
-  static const String sliderDescription6 =
+  static const String sliderTitle5 = "Önemli Todolar!";
+  static const String sliderDescription5 =
       "Todolarınız arasında önemli olabilecek todoları ayrı bi yere kaydedebilirsinzi.";
 
-  static const String sliderTitle7 = "Takvim Ajandınızı Oluşturun!";
-  static const String sliderDescription7 =
+  static const String sliderTitle6 = "Takvim Ajandınızı Oluşturun!";
+  static const String sliderDescription6 =
       "Sizin için önemli olan günleri takvim üzerinden işaretleyebilir ve not alabilirsiniz.";
 
   static const String sliderNextBtn = "Devam et";

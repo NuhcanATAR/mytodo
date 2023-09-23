@@ -104,6 +104,7 @@ class SliderModelService {
         ],
       ),
     ),
+
     // card 4
     SizedBox(
       width: double.infinity,
@@ -114,7 +115,7 @@ class SliderModelService {
           // img
           Padding(
             padding: const EdgeInsets.only(bottom: 5, top: 5),
-            child: ImgIMGConstant.appSliderImg4.toImg2,
+            child: ImgIMGConstant.appSliderImg5.toImg2,
           ),
           // title
           const Padding(
@@ -145,7 +146,7 @@ class SliderModelService {
           // img
           Padding(
             padding: const EdgeInsets.only(bottom: 5, top: 5),
-            child: ImgIMGConstant.appSliderImg5.toImg2,
+            child: ImgIMGConstant.appSliderImg6.toImg2,
           ),
           // title
           const Padding(
@@ -176,7 +177,7 @@ class SliderModelService {
           // img
           Padding(
             padding: const EdgeInsets.only(bottom: 5, top: 5),
-            child: ImgIMGConstant.appSliderImg6.toImg2,
+            child: ImgIMGConstant.appSliderImg7.toImg2,
           ),
           // title
           const Padding(
@@ -191,37 +192,6 @@ class SliderModelService {
             padding: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 5),
             child: LabelMediumGreyText(
               text: StringSliderConstant.sliderDescription6,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
-    ),
-    // card 7
-    SizedBox(
-      width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          // img
-          Padding(
-            padding: const EdgeInsets.only(bottom: 5, top: 5),
-            child: ImgIMGConstant.appSliderImg7.toImg2,
-          ),
-          // title
-          const Padding(
-            padding: EdgeInsets.only(top: 40, bottom: 5, left: 5, right: 5),
-            child: TitleMediumBlackBoldText(
-              text: StringSliderConstant.sliderTitle7,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          // description
-          const Padding(
-            padding: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 5),
-            child: LabelMediumGreyText(
-              text: StringSliderConstant.sliderDescription7,
               textAlign: TextAlign.center,
             ),
           ),
