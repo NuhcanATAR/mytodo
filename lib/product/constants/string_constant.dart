@@ -244,3 +244,20 @@ class StringTodoConstants {
   // loading title
   static const String loadingTitle = "Todolar Yükleniyor...";
 }
+
+@immutable
+class StringProfileConstants {
+  const StringProfileConstants._();
+
+  // title
+  static const String title = "Profil";
+
+  // menu 1
+  static const String menu1 = "Ad Soyad Değiştir";
+  // menu 2
+  static const String menu2 = "E-mail Güncelle";
+  // menu 3
+  static const String menu3 = "Şifreni yenile";
+  // menu 4
+  static const String menu4 = "Çıkış Yap";
+}
