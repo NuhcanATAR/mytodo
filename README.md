@@ -13,14 +13,13 @@ Veritabanı Diagramı:       [İNDİR](https://firebasestorage.googleapis.com/v0
 Uygulama Detaylı Ekran Görüntüleri:       [İNDİR](https://firebasestorage.googleapis.com/v0/b/mytododb-a5ca9.appspot.com/o/ABOUTTHEAPP%2FPhotos-001%20(8).zip?alt=media&token=3cc22cf1-0226-483c-9325-7a17dbb456d9)<br><br>
 
 ## Ekran Görüntüleri
-![Ekran Görüntüsü 1](https://github.com/NuhcanATAR/mytodo/assets/77950761/900445af-e44e-47a9-850e-6305cd8a8e51)
+![Ekran Görüntüsü 1](https://github.com/NuhcanATAR/mytodo/assets/77950761/dcdd726e-fed4-4a1b-b4f5-d5f8871301dd)
 
-![Ekran Görüntüsü 2](https://github.com/NuhcanATAR/mytodo/assets/77950761/8f9e4409-3f86-4085-b6b3-d49cdb4273cb)
+![Ekran Görüntüsü 2](https://github.com/NuhcanATAR/mytodo/assets/77950761/39bac0d3-0ba8-484a-a666-f3e4596abc73)
 
-![Ekran Görüntüsü 3](https://github.com/NuhcanATAR/mytodo/assets/77950761/a49c134c-1f5c-4ff0-aedb-0836d08a9215)
+![Ekran Görüntüsü 3](https://github.com/NuhcanATAR/mytodo/assets/77950761/b3b1ab11-97b5-48aa-96c5-5837aa41309b)
 
-![Ekran Görüntüsü 4](https://github.com/NuhcanATAR/mytodo/assets/77950761/9c0cdbcc-b179-4acf-8551-eb80e0f7c632)
+![Ekran Görüntüsü 4](https://github.com/NuhcanATAR/mytodo/assets/77950761/60989da3-98f6-40a5-aff6-6c605f63be66)
 
 Linkedin[NuhcanATAR](https://docs.flutter.dev/)<3
-
 
