@@ -96,10 +96,7 @@ class _TodoCategoryViewState extends MainTodoBase<TodoCategoryView> {
                                   ? TodoServiceDb.TODOS.stTodoHealthCol
                                   : widget.data['ID'] == "fYGlLPTeMpPCYfirfleu"
                                       ? TodoServiceDb.TODOS.stTodoSportCol
-                                      : widget.data['ID'] ==
-                                              "wNtyPEvvFYoWjI36TSJy"
-                                          ? TodoServiceDb.TODOS.stTodoMovieCol
-                                          : TodoServiceDb.TODOS.stTodoTestCol,
+                                      : TodoServiceDb.TODOS.stTodoMovieCol,
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
