@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+// constatn
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 

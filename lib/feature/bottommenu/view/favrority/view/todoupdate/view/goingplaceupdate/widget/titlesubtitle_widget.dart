@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// constant
 import 'package:mytodo/product/constants/string_constant.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
@@ -21,7 +24,7 @@ class TitleSubTitleWidget extends StatelessWidget {
   // title
   Widget get buildTitleWidget => SizedBox(
         width: maxWidth,
-        child: TitleMediumBlackBoldText(
+        child: const TitleMediumBlackBoldText(
           text: StringTodoConstants.goingToPlaceUpdateTitle,
           textAlign: TextAlign.left,
         ),
@@ -31,7 +34,7 @@ class TitleSubTitleWidget extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: SizedBox(
           width: maxWidth,
-          child: LabelMediumGreyText(
+          child: const LabelMediumGreyText(
             text: StringTodoConstants.goingToPlaceUpdateSubTitle,
             textAlign: TextAlign.left,
           ),

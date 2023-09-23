@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/calendar_base/calendar_base.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class CreatePlanView extends StatefulWidget {
@@ -85,7 +93,7 @@ class _CreatePlanViewState extends MainCalendarBase<CreatePlanView> {
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1,
@@ -117,7 +125,7 @@ class _CreatePlanViewState extends MainCalendarBase<CreatePlanView> {
                 decoration: InputDecoration(
                   enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.transparent)),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.red,
                       width: 1,
@@ -169,13 +177,13 @@ class _CreatePlanViewState extends MainCalendarBase<CreatePlanView> {
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1,
                       ),
                     ),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.location_on,
                       color: Colors.redAccent,
                       size: 21,

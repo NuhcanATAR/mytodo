@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
 
 class HeadlineSmallText extends StatelessWidget {

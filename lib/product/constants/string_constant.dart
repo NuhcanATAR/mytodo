@@ -130,9 +130,12 @@ class StringForgotPasswordConstant {
 class StringTodoConstants {
   const StringTodoConstants._();
 
+  // meeting create string
   static const String meetingCreateTitle = "Toplantı Oluşturun!";
   static String meetingCreateSubTitle =
       "Toplantı bilgilerinizi girerek planınızı kaydedin.";
+
+  // goign place create string
   static const String goingPlaceTitle = "Seyahat Planınızı Oluşturun";
   static const String goingPlaceSubTitle =
       "Seyahat planınızı oluşturabilirsiniz.";
@@ -141,69 +144,88 @@ class StringTodoConstants {
   static const String cityStartLocationText = "Başlangıç Konumu *";
   static const String cityEndLocationText = "Gidilecek Konum *";
   static const String datePickerText = "Tarih Belirtin";
+
+  // study create string
   static const String studyCreaeStartDate = "Başlangıç Tarihi";
   static const String studyCreaeEndDate = "Bitiş Tarihi";
   static const String studyCreateTitleText = "Ders Çalışma Planı Oluştur";
   static const String studyCreateSubTitleText =
       "Ders çalışma planınızı oluşturun ve planlı şekilde çalışmaya başlayın.";
+
+  // book create string
   static const String bookCreateTitle = "Kitaplarınızı ekleyin";
   static const String bookCreateSubTitle =
       "Kitaplarınızı ekleyin ve kendinizi geliştirin daha çok kitap ekleyerek kendinizi geliştirin.";
   static const String pageCountText = "Sayfa Sayısı *";
   static const String bookCategoryText = "Kitap Kategorisi *";
+
+  // shopping create string
   static const String shoppingCreateTitle = "Alışveriş Listenizi oluşturun.";
   static const String shoppingCreateSubTitle =
       "Alışveriş listenizi oluşturarak, daha kolay ve hızlı alışverişinizi yapın.";
   static const String shoppingTypeText = "Alışveriş Türü *";
+
+  // healt create string
   static const String healthCreateTitle = "Sağlık Planınızı oluşturun.";
   static const String healthCreateSubTitle =
       "Sağlık planınızı oluşturarak, sağlınızı planlayın.";
   static const String healthCreateDate = "Gidiş Tarihi *";
   static const String healtType = "Kategori Seçimi *";
 
+  // spor create string
   static const String sportTitle = "Spor Planlanlarınızı oluşturun!";
   static const String sportSubTitle =
       "Spor planlarınızı oluşturun ve düzenli spor yapmaya başlayın.";
   static const String sporDate = "Başlama Tarihi *";
   static const String sporTimeType = "Spor Vakti *";
 
+  // movie create string
   static const String movieTitle = "Dizi & Film oluştur!";
   static const String movieSubTitle =
       "İzlemek istediğiniz veya izlediğiniz dizi veya filmleri not alabilirsiniz.";
   static const String movieCategory = "Kategorisi *";
   static const String button = "Kaydet";
 
+  // meeting update string
   static const String meetingUpdateTitle = "Toplantı Bilgini Güncelle!";
   static const String meetingUpdateSubTitle =
       "Toplantı bilginizi güncelleyebilirsiniz.";
 
+  // going to place update string
   static const String goingToPlaceUpdateTitle =
       "Seyahat Planınızı Güncelleyin!";
   static const String goingToPlaceUpdateSubTitle =
       "Seyahat planınızmı güncellemek istiyorsunuz? hemen güncelleyin.";
 
+  // study update string
   static const String studyUpdateTitle = "Ders Çalışma planı güncelleme!";
   static const String studyUpdateSubTitle = "Çalışma planınızı güncelleyin.";
 
+  // book update string
   static const String bookUpdateTitle = "Kitap Listenizi Güncelleyin!";
   static const String bookUpdateSubTitle = "Rafınızda duran kitabı değiştirin.";
 
+  // shopping list update string
   static const String shoppingListUpdateTitle = "Alışveriş Listeni Güncelle!";
   static const String shoppingListUpdateSubTitle =
       "Alışveriş listenizi güncelleyin.";
 
+  // healt update string
   static const String healthUpdateTitle = "Sağlık planınızı güncelleyin!";
   static const String healthUpdateSubTitle =
       "Sağlık planınızı güncelleyebilirsiniz.";
 
+  // spor update string
   static const String sporUpdateTitle = "Spor Planlarınızı güncelleyin!";
   static const String sporUpdateSubTitle =
       "Spor planlarınızı hemen güncelleyin.";
 
+  // movie update string
   static const String movieUpdateTitle = "Dizi & Film Listeni Güncelle!";
   static const String movieUpdateSubTitle =
       "İzleme listeni güncelleyebilirsin.";
 
+  // button string
   static const String updateBtnText = "Güncelle!";
 
   // no todo title

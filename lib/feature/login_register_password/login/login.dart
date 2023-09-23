@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:kartal/kartal.dart';
+
+// constant
+import 'package:mytodo/product/constants/color_constant.dart';
+import 'package:mytodo/product/constants/string_constant.dart';
+
+// widget
+import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/feature/login_register_password/login/widget/forgotpass_widget.dart';
 import 'package:mytodo/feature/login_register_password/login/widget/loginbtn_widget.dart';
 import 'package:mytodo/feature/login_register_password/login/widget/registerbtn_widget.dart';
 import 'package:mytodo/feature/login_register_password/login/widget/titlesubtitle_widget.dart';
-import 'package:mytodo/product/constants/color_constant.dart';
-import 'package:mytodo/product/constants/string_constant.dart';
-import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
+// pub dev
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kartal/kartal.dart';
+
+// base
 import '../../../product/utility/base/log_reg_pass_base/login_base/login_base.dart';
 
 class LoginView extends StatefulWidget {
@@ -20,56 +27,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends MainLoginBase<LoginView> {
-  @override
-  void initState() {
-    super.initState();
-
-    getConnnectivityStatus();
-    _loadUserEmailPassword();
-  }
-
-  // ignore: unused_element
-  void _loadUserEmailPassword() async {
-    // ignore: avoid_print
-    print("Load Email");
-    try {
-      // ignore: no_leading_underscores_for_local_identifiers
-      SharedPreferences _prefs = await SharedPreferences.getInstance();
-      // ignore: no_leading_underscores_for_local_identifiers
-      var _email = _prefs.getString("email") ?? "";
-      // ignore: no_leading_underscores_for_local_identifiers
-      var _password = _prefs.getString("password") ?? "";
-      // ignore: no_leading_underscores_for_local_identifiers
-      var _remeberMe = _prefs.getBool("remember_me") ?? false;
-
-      // ignore: avoid_print
-      print(_remeberMe);
-      // ignore: avoid_print
-      print(_email);
-      // ignore: avoid_print
-      print(_password);
-      if (_remeberMe) {
-        setState(() {
-          serviceModel.isRememberChecked = true;
-        });
-        serviceModel.emailController.text = _email;
-        serviceModel.passwordController.text = _password;
-        // ignore: use_build_context_synchronously
-        serviceRouter.loginBottomMenuRouterPush(context);
-      }
-    } catch (e) {
-      // ignore: avoid_print
-      print(e);
-    }
-  }
-
-  // connection controller
-  @override
-  void dispose() {
-    serviceModel.subscription.cancel();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

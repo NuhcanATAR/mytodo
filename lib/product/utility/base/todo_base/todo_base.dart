@@ -1,10 +1,24 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// extension
 import 'package:mytodo/product/extension/view_size/viewsize_model.dart';
+
+// model
 import 'package:mytodo/product/models/todo_model/todo_model.dart';
+
+// view routers
 import 'package:mytodo/product/router/todo_router/todo_router.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// firebase
 import 'package:mytodo/product/utility/firebase/service/firebase_service.dart';
 
 abstract class MainTodoBase<T extends StatefulWidget> extends State<T> {
@@ -474,27 +488,6 @@ abstract class MainTodoBase<T extends StatefulWidget> extends State<T> {
       serviceModel.explanationController.clear();
     });
   }
-
-  // // query control
-  // void todoListQueryControl(Map<String, dynamic> data) async {
-  //   if (data['ID'] == "0qXiPbGgtwu3j1r5j5Lz") {
-  //     TodoServiceDb.TODOS.stTodoMeetingCol;
-  //   } else if (data['ID'] == "GMwLSlyI6e2fY1N8JsLQ") {
-  //     TodoServiceDb.TODOS.stTodoPlacesToGoCol;
-  //   } else if (data['ID'] == "QqqKN0VbdWfofliUtDm6") {
-  //     TodoServiceDb.TODOS.stTodoStudyCol;
-  //   } else if (data['ID'] == "RjFvWQe3dpW34QAxX2v7") {
-  //     TodoServiceDb.TODOS.stTodoBooksCol;
-  //   } else if (data['ID'] == "SXrN07acJwhryUdzVwIQ") {
-  //     TodoServiceDb.TODOS.stTodoShopCol;
-  //   } else if (data['ID'] == "ZaqqOF15uH11kMv0vdHu") {
-  //     TodoServiceDb.TODOS.stTodoHealthCol;
-  //   } else if (data['ID'] == "fYGlLPTeMpPCYfirfleu") {
-  //     TodoServiceDb.TODOS.stTodoSportCol;
-  //   } else if (data['ID'] == "wNtyPEvvFYoWjI36TSJy") {
-  //     TodoServiceDb.TODOS.stTodoMovieCol;
-  //   }
-  // }
 
   // check status todo
   void checkStatusChange(bool? value, Map<String, dynamic> data,

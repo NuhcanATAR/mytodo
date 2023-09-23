@@ -1,10 +1,16 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/constants/img_constant.dart';
 import 'package:mytodo/product/constants/string_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/splash_base/splash_base.dart';
 
 class SplashView extends StatefulWidget {

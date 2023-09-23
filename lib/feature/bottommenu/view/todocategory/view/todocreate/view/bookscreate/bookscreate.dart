@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/view/bookscreate/widget/titlesubtitle_widget.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/constants/string_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
 
-import '../../../../../../../../product/widget/text_widget/label_medium_text.dart';
+// widget
+import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class BooksCreateView extends StatefulWidget {
   const BooksCreateView({super.key, required this.data});

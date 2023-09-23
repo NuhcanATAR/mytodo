@@ -1,12 +1,23 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/favrority/view/todoupdate/todoupdate.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
-import 'package:mytodo/product/utility/base/favority_base/favority_base.dart';
-import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// firebase
+import 'package:mytodo/product/utility/base/favority_base/favority_base.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
@@ -220,8 +231,6 @@ class _TodoDetailsViewState extends MainFavorityBase<TodoDetailsView> {
                 }
 
                 if (snapshot.connectionState == ConnectionState.done) {
-                  Map<String, dynamic> dataFavo =
-                      snapshot.data!.data() as Map<String, dynamic>;
                   return serviceModel.isImportantButtonStatus == false
                       ? GestureDetector(
                           onTap: () {

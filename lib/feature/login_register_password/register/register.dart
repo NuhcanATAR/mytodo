@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// widget
 import 'package:mytodo/feature/login_register_password/register/widget/titlesubtitle_widget.dart';
 import 'package:mytodo/feature/login_register_password/register/widget/registerbtn_widget.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/constants/string_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/log_reg_pass_base/register_base/register_base.dart';
 
 class RegisterView extends StatefulWidget {

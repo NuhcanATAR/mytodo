@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mytodo/feature/bottommenu/view/calendar/view/create_view.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class NoteCreateButton extends StatelessWidget {

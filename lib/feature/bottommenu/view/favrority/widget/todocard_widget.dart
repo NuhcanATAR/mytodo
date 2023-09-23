@@ -1,9 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/favrority/view/tododetails/tododetails.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class TodoCard extends StatefulWidget {
@@ -198,8 +210,6 @@ class _TodoCardState extends MainTodoBase<TodoCard> {
               }
 
               if (snapshot.connectionState == ConnectionState.done) {
-                Map<String, dynamic> dataFavo =
-                    snapshot.data!.data() as Map<String, dynamic>;
                 return serviceModel.isFavoriteButtonStatus == false
                     ? GestureDetector(
                         onTap: () {

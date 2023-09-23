@@ -1,11 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/todocategory/todocategory.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/home_db/homedb.dart';
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
+
+// pub dev
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CategoryListWidget extends StatelessWidget {
   const CategoryListWidget({

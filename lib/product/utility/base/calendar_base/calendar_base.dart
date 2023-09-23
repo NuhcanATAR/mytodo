@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// model
 import 'package:mytodo/product/extension/view_size/viewsize_model.dart';
 import 'package:mytodo/product/models/calendar_model/calendar_model.dart';
+
+// view routers
 import 'package:mytodo/product/router/calendar_router/calendar_router.dart';
-import 'package:mytodo/product/utility/firebase/database/calendar_db/calendar_db.dart';
+
+// firebase
 import 'package:mytodo/product/utility/firebase/service/firebase_service.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 abstract class MainCalendarBase<T extends StatefulWidget> extends State<T> {
@@ -112,7 +123,7 @@ abstract class MainCalendarBase<T extends StatefulWidget> extends State<T> {
                                 enabledBorder: const OutlineInputBorder(
                                     borderSide:
                                         BorderSide(color: Colors.transparent)),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
@@ -147,7 +158,7 @@ abstract class MainCalendarBase<T extends StatefulWidget> extends State<T> {
                               enabledBorder: const OutlineInputBorder(
                                   borderSide:
                                       BorderSide(color: Colors.transparent)),
-                              focusedBorder: OutlineInputBorder(
+                              focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Colors.red,
                                   width: 1,
@@ -205,13 +216,13 @@ abstract class MainCalendarBase<T extends StatefulWidget> extends State<T> {
                                 enabledBorder: const OutlineInputBorder(
                                     borderSide:
                                         BorderSide(color: Colors.transparent)),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
                                 ),
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.location_on,
                                   color: Colors.redAccent,
                                   size: 21,

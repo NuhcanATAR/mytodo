@@ -1,16 +1,24 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/todocategory/view/todocreate/todocreate.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/widget/notodo_view.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todocard_widget.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todoerror_view.dart';
 import 'package:mytodo/feature/bottommenu/view/todocategory/widget/todoloading_view.dart';
-import 'package:mytodo/product/constants/color_constant.dart';
-import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
-import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
+// constant
+import 'package:mytodo/product/constants/color_constant.dart';
+
+// database
+import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// base
 import '../../../../product/utility/base/todo_base/todo_base.dart';
 
 class TodoCategoryView extends StatefulWidget {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+
+// constant
 import 'package:mytodo/product/constants/string_constant.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class RegisterBtnWidget extends StatelessWidget {

@@ -1,13 +1,25 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// extension
 import 'package:mytodo/product/extension/view_size/viewsize_model.dart';
+
+// model
 import 'package:mytodo/product/models/log_reg_pass_model/register/register_model.dart';
+
+// pub dev
+import 'package:firebase_auth/firebase_auth.dart';
+
+// view routers
 import 'package:mytodo/product/router/log_reg_pass_router/register_router.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/log_reg_pas_db/registerdb.dart';
+
+// firebase
 import 'package:mytodo/product/utility/firebase/service/firebase_service.dart';
 
+// view routers
 import '../../../../messagealert/log_reg_pas_alert/register_alert.dart';
 
 abstract class MainRegisterBase<T extends StatefulWidget> extends State<T> {

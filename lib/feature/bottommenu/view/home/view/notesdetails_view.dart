@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/home_db/homedb.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
@@ -77,7 +85,7 @@ class NoteDetailsView extends StatelessWidget {
                                 onTap: () {
                                   notDelete(data);
                                 },
-                                child: Row(
+                                child: const Row(
                                   children: <Widget>[
                                     Expanded(
                                       child: LabelMediumGreyBoldText(
@@ -327,7 +335,7 @@ class NoteDetailsView extends StatelessWidget {
                                     ),
                                   );
                                 },
-                                child: Row(
+                                child: const Row(
                                   children: <Widget>[
                                     Expanded(
                                       child: LabelMediumGreyBoldText(

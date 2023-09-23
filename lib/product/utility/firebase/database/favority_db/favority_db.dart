@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 enum FavorityServiceDb {
+  // ignore: constant_identifier_names
   FAVORITE;
 
   Future<DocumentSnapshot<Map<String, dynamic>>> get refCol =>

@@ -1,12 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// pub dev
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/home/view/notesdetails_view.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
 import 'package:mytodo/product/constants/img_constant.dart';
-import 'package:mytodo/product/constants/string_constant.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/home_db/homedb.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 import 'package:mytodo/product/widget/text_widget/title_medium_text.dart';
 
@@ -250,7 +259,7 @@ class NotesListWidget extends StatelessWidget {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                    ImgIMGConstant.appHomeNoteImg.toPng7),
+                                    ImgIMGConstant.appHomeNoteImg.tojpg1),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius: const BorderRadius.all(

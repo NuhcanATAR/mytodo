@@ -1,10 +1,16 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:mytodo/product/constants/color_constant.dart';
-import 'package:mytodo/product/constants/string_constant.dart';
 
+// pub dev
+import 'package:carousel_slider/carousel_slider.dart';
+
+// widget
+import 'package:mytodo/feature/slider/widget/startbutton_widget.dart';
+
+// constant
+import 'package:mytodo/product/constants/color_constant.dart';
+
+// base
 import 'package:mytodo/product/utility/base/slider_base/slider_base.dart';
-import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class SliderView extends StatefulWidget {
   const SliderView({super.key});
@@ -85,29 +91,9 @@ class _SliderViewState extends MainSliderBase<SliderView> {
       );
 
   // start button
-  Widget get buildStartButton => Padding(
-        padding: const EdgeInsets.all(10),
-        child: GestureDetector(
-          onTap: () {
-            serviceRouter.sliderLogRegViewPush(context);
-          },
-          child: SizedBox(
-            width: maxWidth,
-            height: dynamicHeight(0.08),
-            child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: ColorBackgroundConstant.purplePrimary,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(12),
-                ),
-              ),
-              child: const LabelMediumWhiteText(
-                text: StringSliderConstant.sliderNextBtn,
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ),
+  Widget get buildStartButton => StartButton(
+        maxWidth: maxWidth,
+        dynamicHeight: dynamicHeight,
+        serviceRouter: serviceRouter,
       );
 }

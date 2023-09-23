@@ -1,10 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+// view routers
 import 'package:mytodo/feature/bottommenu/view/favrority/view/tododetails/tododetails.dart';
+
+// constant
 import 'package:mytodo/product/constants/color_constant.dart';
-import 'package:mytodo/product/utility/base/important_base/important_base.dart';
+
+// base
 import 'package:mytodo/product/utility/base/todo_base/todo_base.dart';
+
+// database
 import 'package:mytodo/product/utility/firebase/database/todo_db/todo_db.dart';
+
+// widget
 import 'package:mytodo/product/widget/text_widget/label_medium_text.dart';
 
 class TodoCard extends StatefulWidget {
@@ -172,65 +180,6 @@ class _TodoCardState extends MainTodoBase<TodoCard> {
               text: widget.data['EXPLANATION'].toString(),
               textAlign: TextAlign.left,
             ),
-          ),
-          trailing: FutureBuilder<DocumentSnapshot>(
-            future:
-                TodoServiceDb.FAVORITE.refFavoCol.doc(widget.data['ID']).get(),
-            builder: (BuildContext context,
-                AsyncSnapshot<DocumentSnapshot> snapshot) {
-              if (snapshot.hasError) {
-                return const SizedBox();
-              }
-
-              if (snapshot.hasData && !snapshot.data!.exists) {
-                return GestureDetector(
-                  onTap: () {
-                    todoFavoriteAdd(widget.data, widget.mainData);
-                    setState(() {
-                      serviceModel.isFavoriteButtonStatus = false;
-                    });
-                  },
-                  child: const Icon(
-                    Icons.star_outline,
-                    color: Colors.yellow,
-                    size: 24,
-                  ),
-                );
-              }
-
-              if (snapshot.connectionState == ConnectionState.done) {
-                Map<String, dynamic> dataFavo =
-                    snapshot.data!.data() as Map<String, dynamic>;
-                return serviceModel.isFavoriteButtonStatus == false
-                    ? GestureDetector(
-                        onTap: () {
-                          todoFavoriteDelete(widget.data);
-                          setState(() {
-                            serviceModel.isFavoriteButtonStatus = true;
-                          });
-                        },
-                        child: const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 24,
-                        ),
-                      )
-                    : GestureDetector(
-                        onTap: () {
-                          todoFavoriteAdd(widget.data, widget.mainData);
-                          setState(() {
-                            serviceModel.isFavoriteButtonStatus = false;
-                          });
-                        },
-                        child: const Icon(
-                          Icons.star_outline,
-                          color: Colors.yellow,
-                          size: 24,
-                        ),
-                      );
-              }
-              return const SizedBox();
-            },
           ),
         ));
   }
