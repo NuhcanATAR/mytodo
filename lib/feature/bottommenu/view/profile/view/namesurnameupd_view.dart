@@ -146,7 +146,7 @@ class _NameSurnameUpdViewState extends MainProfileBase<NameSurnameUpdView> {
                       Radius.circular(4),
                     ),
                   ),
-                  child: LabelMediumWhiteText(
+                  child: const LabelMediumWhiteText(
                     text: "Güncelle",
                     textAlign: TextAlign.center,
                   ),
